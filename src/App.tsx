@@ -7,40 +7,23 @@ import {
 } from "./data/siamRoutes";
 import { useI18n } from "./i18n";
 import "./App.css";
-
-const UI_TEXT = {
-  title: { en: "Siam", th: "สยาม" },
-  subtitle: { en: "Which Platform?", th: "ขึ้นฝั่งไหน ?" },
-  destinationLabel: { en: "Destination station", th: "สถานีปลายทาง" },
-  searchPlaceholder: {
-    en: "Try Asok, Bang Wa, National Stadium…",
-    th: "ลองพิมพ์ อโศก บางหว้า สนามกีฬาแห่งชาติ…",
-  },
-  search: { en: "Search", th: "ค้นหา" },
-  clearSearch: { en: "Clear search", th: "ล้างการค้นหา" },
-  suggestionsLabel: { en: "Popular from Siam", th: "ยอดนิยมจากสยาม" },
-  levelLabel: { en: "Level", th: "ชั้น" },
-  nextStopLabel: { en: "Next stop", th: "สถานีถัดไป" },
-  terminalLabel: { en: "Terminal", th: "ปลายทาง" },
-  noResultsTitle: { en: "No station found", th: "ไม่พบสถานี" },
-  noResultsPrefix: {
-    en: "Double-check the spelling or try searching by station code such as N8 for Mo Chit.",
-    th: "ตรวจสอบการสะกดอีกครั้งหรือค้นด้วยรหัสสถานี เช่น N8 สำหรับหมอชิต",
-  },
-  languageToggle: { en: "Language selection", th: "เลือกภาษา" },
-} as const;
+import { UI_TEXT } from "./data/language";
 
 const LOCALE_LABEL: Record<Locale, string> = {
   en: "EN",
   th: "ไทย",
 };
 
+const AUTHOR_SITE = "https://apiwit.me";
+
+const centerToken = ["siam", "สยาม"];
+
 function App() {
   const [inputValue, setInputValue] = useState("");
   const [activeQuery, setActiveQuery] = useState("");
   const [scrollPosition, setScrollPosition] = useState(0);
 
-  const { locale, setLocale, t } = useI18n();
+  const { locale, toggleLocale, t } = useI18n();
 
   const stationLookup = useMemo(() => buildStationLookup(), []);
 
@@ -57,6 +40,8 @@ function App() {
     const scrollTo = rect.bottom + scrollY + window.innerHeight * 0.2;
 
     setScrollPosition(scrollTo);
+
+    document.getElementById("station-search")?.focus();
   }, []);
 
   const matches = useMemo(() => {
@@ -70,13 +55,10 @@ function App() {
       const searchTargets = [
         entry.station.name.en,
         entry.station.name.th,
-        entry.route.directionLabel.en,
-        entry.route.directionLabel.th,
         entry.station.code ?? "",
-        ...(entry.station.aliases ?? []),
         ...(entry.station.searchTokens ?? []),
       ]
-        .map((value) => value.toLowerCase())
+        .map((value) => value.toLowerCase().replaceAll(" ", "").trim())
         .filter(Boolean);
 
       if (searchTargets.length === 0) {
@@ -147,6 +129,7 @@ function App() {
           className="language-toggle"
           role="group"
           aria-label={t(UI_TEXT.languageToggle)}
+          onClick={() => toggleLocale(locale)}
         >
           {ALL_LOCALES.map((option) => (
             <button
@@ -155,7 +138,6 @@ function App() {
               className={`language-button${
                 locale === option ? " is-active" : ""
               }`}
-              onClick={() => setLocale(option)}
               aria-pressed={locale === option}
             >
               {LOCALE_LABEL[option]}
@@ -235,15 +217,27 @@ function App() {
               </div>
             ) : (
               <div className="empty-state" role="status">
-                <h2>{t(UI_TEXT.noResultsTitle)}</h2>
-                <p>{t(UI_TEXT.noResultsPrefix)}</p>
+                <h2>
+                  {t(
+                    centerToken.includes(activeQuery)
+                      ? UI_TEXT.youAreHere
+                      : UI_TEXT.noResultsTitle
+                  )}
+                </h2>
+                {!centerToken.includes(activeQuery) && (
+                  <p>{t(UI_TEXT.noResultsPrefix)}</p>
+                )}
               </div>
             )}
           </main>
         )}
       </section>
 
-      <footer className="app-footer">By apiwit | Github</footer>
+      <footer className="app-footer">
+        <a href={AUTHOR_SITE} target="_blank" rel="noopener noreferrer">
+          {t(UI_TEXT.siteAuthor)}
+        </a>
+      </footer>
     </div>
   );
 }

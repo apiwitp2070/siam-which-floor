@@ -1,0 +1,494 @@
+{
+  "sukhumvit": {
+    "northbound": [
+      {
+        "name": {
+          "en": "Ratchathewi",
+          "th": "ราชเทวี"
+        },
+        "code": "N1",
+        "tokens": ["ราชเทวี"]
+      },
+      {
+        "name": {
+          "en": "Phaya Thai",
+          "th": "พญาไท"
+        },
+        "code": "N2",
+        "tokens": ["พญาไท"]
+      },
+      {
+        "name": {
+          "en": "Victory Monument",
+          "th": "อนุสาวรีย์ชัยสมรภูมิ"
+        },
+        "code": "N3",
+        "tokens": ["อนุสาวรีย์ชัยสมรภูมิ", "อนุสาวรีย์ชัย"]
+      },
+      {
+        "name": {
+          "en": "Sanam Pao",
+          "th": "สนามเป้า"
+        },
+        "code": "N4",
+        "tokens": ["สนามเป้า"]
+      },
+      {
+        "name": {
+          "en": "Ari",
+          "th": "อารีย์"
+        },
+        "code": "N5",
+        "tokens": ["อารีย์"]
+      },
+      {
+        "name": {
+          "en": "Sena Ruam",
+          "th": "เสนาร่วม"
+        },
+        "code": "N6",
+        "tokens": ["เสนาร่วม"]
+      },
+      {
+        "name": {
+          "en": "Saphan Khwai",
+          "th": "สะพานควาย"
+        },
+        "code": "N7",
+        "tokens": ["สะพานควาย"]
+      },
+      {
+        "name": {
+          "en": "Mo Chit",
+          "th": "หมอชิต"
+        },
+        "code": "N8",
+        "tokens": ["Mo Chid", "หมอชิต"]
+      },
+      {
+        "name": {
+          "en": "Ha Yaek Lat Phrao",
+          "th": "ห้าแยกลาดพร้าว"
+        },
+        "code": "N9",
+        "tokens": ["ห้าแยกลาดพร้าว"]
+      },
+      {
+        "name": {
+          "en": "Phahon Yothin 24",
+          "th": "พหลโยธิน 24"
+        },
+        "code": "N10",
+        "tokens": ["พหลโยธิน 24"]
+      },
+      {
+        "name": {
+          "en": "Ratchayothin",
+          "th": "รัชโยธิน"
+        },
+        "code": "N11",
+        "tokens": ["รัชโยธิน"]
+      },
+      {
+        "name": {
+          "en": "Sena Nikhom",
+          "th": "เสนานิคม"
+        },
+        "code": "N12",
+        "tokens": ["เสนานิคม"]
+      },
+      {
+        "name": {
+          "en": "Kasetsart University",
+          "th": "มหาวิทยาลัยเกษตรศาสตร์"
+        },
+        "code": "N13",
+        "tokens": ["Kaset", "มหาวิทยาลัยเกษตรศาสตร์", "เกษตรศาสตร์", "เกษตร"]
+      },
+      {
+        "name": {
+          "en": "Royal Forest Department",
+          "th": "กรมป่าไม้"
+        },
+        "code": "N14",
+        "tokens": ["กรมป่าไม้"]
+      },
+      {
+        "name": {
+          "en": "Bang Bua",
+          "th": "บางบัว"
+        },
+        "code": "N15",
+        "tokens": ["บางบัว"]
+      },
+      {
+        "name": {
+          "en": "11th Infantry Regiment",
+          "th": "กรมทหารราบที่ 11"
+        },
+        "code": "N16",
+        "tokens": ["กรมทหารราบที่ 11"]
+      },
+      {
+        "name": {
+          "en": "Wat Phra Sri Mahathat",
+          "th": "วัดพระศรีมหาธาตุ"
+        },
+        "code": "N17",
+        "tokens": ["วัดพระศรีมหาธาตุ"]
+      },
+      {
+        "name": {
+          "en": "Phahon Yothin 59",
+          "th": "พหลโยธิน 59"
+        },
+        "code": "N18",
+        "tokens": ["พหลโยธิน 59"]
+      },
+      {
+        "name": {
+          "en": "Sai Yud",
+          "th": "สายหยุด"
+        },
+        "code": "N19",
+        "tokens": ["สายหยุด"]
+      },
+      {
+        "name": {
+          "en": "Saphan Mai",
+          "th": "สะพานใหม่"
+        },
+        "code": "N20",
+        "tokens": ["สะพานใหม่"]
+      },
+      {
+        "name": {
+          "en": "Bhumibol Adulyadej Hospital",
+          "th": "โรงพยาบาลภูมิพลอดุลยเดช"
+        },
+        "code": "N21",
+        "tokens": ["Bhumibol Hospital", "โรงพยาบาลภูมิพลอดุลยเดช", "รพ.ภูมิพล"]
+      },
+      {
+        "name": {
+          "en": "Royal Thai Air Force Museum",
+          "th": "พิพิธภัณฑ์กองทัพอากาศ"
+        },
+        "code": "N22",
+        "tokens": ["พิพิธภัณฑ์กองทัพอากาศ"]
+      },
+      {
+        "name": {
+          "en": "Yaek Kor Por Aor",
+          "th": "แยก คปอ."
+        },
+        "code": "N23",
+        "tokens": ["แยกคปอ", "คปอ"]
+      },
+      {
+        "name": {
+          "en": "Khu Khot",
+          "th": "คูคต"
+        },
+        "code": "N24",
+        "tokens": ["คูคต"]
+      }
+    ],
+    "eastbound": [
+      {
+        "name": {
+          "en": "Chit Lom",
+          "th": "ชิดลม"
+        },
+        "code": "E1",
+        "tokens": ["Chitlom", "ชิดลม"]
+      },
+      {
+        "name": {
+          "en": "Phloen Chit",
+          "th": "เพลินจิต"
+        },
+        "code": "E2",
+        "tokens": ["เพลินจิต"]
+      },
+      {
+        "name": {
+          "en": "Nana",
+          "th": "นานา"
+        },
+        "code": "E3",
+        "tokens": ["นานา"]
+      },
+      {
+        "name": {
+          "en": "Asok",
+          "th": "อโศก"
+        },
+        "code": "E4",
+        "tokens": ["อโศก"]
+      },
+      {
+        "name": {
+          "en": "Phrom Phong",
+          "th": "พร้อมพงษ์"
+        },
+        "code": "E5",
+        "tokens": ["พร้อมพงษ์"]
+      },
+      {
+        "name": {
+          "en": "Thong Lo",
+          "th": "ทองหล่อ"
+        },
+        "code": "E6",
+        "tokens": ["Thonglor", "ทองหล่อ"]
+      },
+      {
+        "name": {
+          "en": "Ekkamai",
+          "th": "เอกมัย"
+        },
+        "code": "E7",
+        "tokens": ["Ekkamai", "เอกมัย"]
+      },
+      {
+        "name": {
+          "en": "Phra Khanong",
+          "th": "พระโขนง"
+        },
+        "code": "E8",
+        "tokens": ["พระโขนง"]
+      },
+      {
+        "name": {
+          "en": "On Nut",
+          "th": "อ่อนนุช"
+        },
+        "code": "E9",
+        "tokens": ["อ่อนนุช"]
+      },
+      {
+        "name": {
+          "en": "Bang Chak",
+          "th": "บางจาก"
+        },
+        "code": "E10",
+        "tokens": ["บางจาก"]
+      },
+      {
+        "name": {
+          "en": "Punnawithi",
+          "th": "ปุณณวิถี"
+        },
+        "code": "E11",
+        "tokens": ["ปุณณวิถี"]
+      },
+      {
+        "name": {
+          "en": "Udom Suk",
+          "th": "อุดมสุข"
+        },
+        "code": "E12",
+        "tokens": ["อุดมสุข"]
+      },
+      {
+        "name": {
+          "en": "Bang Na",
+          "th": "บางนา"
+        },
+        "code": "E13",
+        "tokens": ["บางนา"]
+      },
+      {
+        "name": {
+          "en": "Bearing",
+          "th": "แบริ่ง"
+        },
+        "code": "E14",
+        "tokens": ["แบริ่ง"]
+      },
+      {
+        "name": {
+          "en": "Samrong",
+          "th": "สำโรง"
+        },
+        "code": "E15",
+        "tokens": ["สำโรง"]
+      },
+      {
+        "name": {
+          "en": "Pu Chao",
+          "th": "ปู่เจ้า"
+        },
+        "code": "E16",
+        "tokens": ["ปู่เจ้า"]
+      },
+      {
+        "name": {
+          "en": "Chang Erawan",
+          "th": "ช้างเอราวัณ"
+        },
+        "code": "E17",
+        "tokens": ["ช้างเอราวัณ"]
+      },
+      {
+        "name": {
+          "en": "Royal Thai Naval Academy",
+          "th": "โรงเรียนนายเรือ"
+        },
+        "code": "E18",
+        "tokens": ["โรงเรียนนายเรือ"]
+      },
+      {
+        "name": {
+          "en": "Pak Nam",
+          "th": "ปากน้ำ"
+        },
+        "code": "E19",
+        "tokens": ["ปากน้ำ"]
+      },
+      {
+        "name": {
+          "en": "Srinagarindra",
+          "th": "ศรีนครินทร์"
+        },
+        "code": "E20",
+        "tokens": ["ศรีนครินทร์"]
+      },
+      {
+        "name": {
+          "en": "Phraek Sa",
+          "th": "แพรกษา"
+        },
+        "code": "E21",
+        "tokens": ["แพรกษา"]
+      },
+      {
+        "name": {
+          "en": "Sai Luat",
+          "th": "สายลวด"
+        },
+        "code": "E22",
+        "tokens": ["สายลวด"]
+      },
+      {
+        "name": {
+          "en": "Kheha",
+          "th": "เคหะ"
+        },
+        "code": "E23",
+        "tokens": ["เคหะ"]
+      }
+    ]
+  },
+  "silom": {
+    "bangwa": [
+      {
+        "name": {
+          "en": "Ratchadamri",
+          "th": "ราชดำริ"
+        },
+        "code": "S1",
+        "tokens": ["ราชดำริ"]
+      },
+      {
+        "name": {
+          "en": "Sala Daeng",
+          "th": "ศาลาแดง"
+        },
+        "code": "S2",
+        "tokens": ["ศาลาแดง"]
+      },
+      {
+        "name": {
+          "en": "Chong Nonsi",
+          "th": "ช่องนนทรี"
+        },
+        "code": "S3",
+        "tokens": ["ช่องนนทรี"]
+      },
+      {
+        "name": {
+          "en": "Saint Louis",
+          "th": "เซนต์หลุยส์"
+        },
+        "code": "S4",
+        "tokens": ["เซนต์หลุยส์"]
+      },
+      {
+        "name": {
+          "en": "Surasak",
+          "th": "สุรศักดิ์"
+        },
+        "code": "S5",
+        "tokens": ["สุรศักดิ์"]
+      },
+      {
+        "name": {
+          "en": "Saphan Taksin",
+          "th": "สะพานตากสิน"
+        },
+        "code": "S6",
+        "tokens": ["สะพานตากสิน"]
+      },
+      {
+        "name": {
+          "en": "Krung Thon Buri",
+          "th": "กรุงธนบุรี"
+        },
+        "code": "S7",
+        "tokens": ["กรุงธนบุรี"]
+      },
+      {
+        "name": {
+          "en": "Wongwian Yai",
+          "th": "วงเวียนใหญ่"
+        },
+        "code": "S8",
+        "tokens": ["วงเวียนใหญ่"]
+      },
+      {
+        "name": {
+          "en": "Pho Nimit",
+          "th": "โพธิ์นิมิตร"
+        },
+        "code": "S9",
+        "tokens": ["โพธิ์นิมิตร"]
+      },
+      {
+        "name": {
+          "en": "Talat Phlu",
+          "th": "ตลาดพลู"
+        },
+        "code": "S10",
+        "tokens": ["ตลาดพลู"]
+      },
+      {
+        "name": {
+          "en": "Wutthakat",
+          "th": "วุฒากาศ"
+        },
+        "code": "S11",
+        "tokens": ["วุฒากาศ"]
+      },
+      {
+        "name": {
+          "en": "Bang Wa",
+          "th": "บางหว้า"
+        },
+        "code": "S12",
+        "tokens": ["บางหว้า"]
+      }
+    ],
+    "national_stadium": [
+      {
+        "name": {
+          "en": "National Stadium",
+          "th": "สนามกีฬาแห่งชาติ"
+        },
+        "code": "W1",
+        "tokens": ["MBK", "สนามกีฬาแห่งชาติ"]
+      }
+    ]
+  }
+}

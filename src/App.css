@@ -32,14 +32,16 @@
 .language-toggle {
   align-self: flex-end;
   display: inline-flex;
-  gap: 0.6rem;
+  gap: 0.4rem;
   background: white;
   padding: 0.4rem;
   border-radius: 999px;
   border: 1px solid rgba(0, 153, 76, 0.18);
+  cursor: pointer;
 }
 
 .language-button {
+  width: 38px;
   border-radius: 999px;
   border: 1px solid transparent;
   font-size: 0.82rem;
@@ -147,7 +149,7 @@
 .search-input:focus {
   outline: none;
   border-color: rgba(0, 153, 76, 0.42);
-  box-shadow: 0 0 0 4px rgba(0, 104, 58, 0.16);
+  box-shadow: 0 0 0 2px rgba(0, 104, 58, 0.16);
 }
 
 .search-input-button-wrapper {
@@ -170,7 +172,7 @@
 }
 
 .search-button {
-  background: #77b72a;
+  background: rgb(1, 148, 102);
   color: white;
   font-weight: 600;
   padding: 0.5rem 1.25rem;
@@ -335,6 +337,11 @@
   .hero-subtitle {
     font-size: 3.5rem;
   }
+
+  .results-list {
+    max-width: 100%;
+    margin: 1rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -367,11 +374,6 @@
 
   .search-block {
     width: 100%;
-  }
-
-  .results-list {
-    max-width: 100%;
-    margin: 1rem;
   }
 
   .station-card {
