@@ -54,11 +54,12 @@ function App() {
     for (const entry of stationLookup) {
       const searchTargets = [
         entry.station.name.en,
+        entry.station.name.en.replaceAll(" ", ""),
         entry.station.name.th,
         entry.station.code ?? "",
         ...(entry.station.searchTokens ?? []),
       ]
-        .map((value) => value.toLowerCase().replaceAll(" ", "").trim())
+        .map((value) => value.toLowerCase().trim())
         .filter(Boolean);
 
       if (searchTargets.length === 0) {
@@ -99,6 +100,8 @@ function App() {
   const handleSearch = () => {
     const trimmed = inputValue.trim();
     setActiveQuery(trimmed);
+
+    document.getElementById("station-search")?.blur();
 
     setTimeout(() => {
       window.scrollTo({
