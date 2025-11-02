@@ -48,10 +48,10 @@ export const ROUTES: PlatformRoute[] = [
     id: "sukhumvit-khu-khot",
     line: {
       name: { en: "Sukhumvit Line", th: "สายสุขุมวิท" },
-      color: "#00994C",
+      color: "#79B72A",
       floorLabel: {
-        en: "Upper level · Level 3",
-        th: "ชั้นบน · ชั้น 3",
+        en: "↑ Upper level",
+        th: "↑ ชั้นบน",
       },
     },
     directionLabel: {
@@ -156,10 +156,10 @@ export const ROUTES: PlatformRoute[] = [
     id: "sukhumvit-kheha",
     line: {
       name: { en: "Sukhumvit Line", th: "สายสุขุมวิท" },
-      color: "#00994C",
+      color: "#79B72A",
       floorLabel: {
-        en: "Upper level · Level 2",
-        th: "ชั้นบน · ชั้น 2",
+        en: "↓ Lower level",
+        th: "↓ ชั้นล่าง",
       },
     },
     directionLabel: {
@@ -223,10 +223,10 @@ export const ROUTES: PlatformRoute[] = [
     id: "silom-bang-wa",
     line: {
       name: { en: "Silom Line", th: "สายสีลม" },
-      color: "#006241",
+      color: "#00817E",
       floorLabel: {
-        en: "Lower level · Level 2",
-        th: "ชั้นล่าง · ชั้น 2",
+        en: "↓ Lower level",
+        th: "↓ ชั้นล่าง",
       },
     },
     directionLabel: {
@@ -289,10 +289,10 @@ export const ROUTES: PlatformRoute[] = [
     id: "silom-national-stadium",
     line: {
       name: { en: "Silom Line", th: "สายสีลม" },
-      color: "#006241",
+      color: "#00817E",
       floorLabel: {
-        en: "Lower level · Level 3",
-        th: "ชั้นล่าง · ชั้น 3",
+        en: "↑ Upper level",
+        th: "↑ ชั้นบน",
       },
     },
     directionLabel: {

@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   ALL_LOCALES,
   buildStationLookup,
@@ -24,11 +24,9 @@ const UI_TEXT = {
   terminalLabel: { en: "Terminal", th: "ปลายทาง" },
   noResultsTitle: { en: "No station found", th: "ไม่พบสถานี" },
   noResultsPrefix: {
-    en: "Double-check the spelling or try searching by station code such as",
-    th: "ตรวจสอบการสะกดอีกครั้งหรือค้นด้วยรหัสสถานี เช่น",
+    en: "Double-check the spelling or try searching by station code such as N8 for Mo Chit.",
+    th: "ตรวจสอบการสะกดอีกครั้งหรือค้นด้วยรหัสสถานี เช่น N8 สำหรับหมอชิต",
   },
-  noResultsMid: { en: "for Mo Chit or", th: "สำหรับหมอชิต หรือ" },
-  noResultsSuffix: { en: "for Asok.", th: "สำหรับอโศก" },
   languageToggle: { en: "Language selection", th: "เลือกภาษา" },
 } as const;
 
@@ -40,13 +38,26 @@ const LOCALE_LABEL: Record<Locale, string> = {
 function App() {
   const [inputValue, setInputValue] = useState("");
   const [activeQuery, setActiveQuery] = useState("");
+  const [scrollPosition, setScrollPosition] = useState(0);
+
   const { locale, setLocale, t } = useI18n();
 
   const stationLookup = useMemo(() => buildStationLookup(), []);
 
   const normalizedActiveQuery = activeQuery.trim().toLowerCase();
 
-  const heoContentElement = document.getElementById("hero-content");
+  useEffect(() => {
+    const searchBoxElement = document.getElementById("search-input-wrapper");
+
+    if (!searchBoxElement) return;
+
+    const rect = searchBoxElement.getBoundingClientRect();
+    const scrollY = window.scrollY || window.pageYOffset;
+
+    const scrollTo = rect.bottom + scrollY + window.innerHeight * 0.2;
+
+    setScrollPosition(scrollTo);
+  }, []);
 
   const matches = useMemo(() => {
     if (!normalizedActiveQuery) {
@@ -106,9 +117,13 @@ function App() {
   const handleSearch = () => {
     const trimmed = inputValue.trim();
     setActiveQuery(trimmed);
-    if (heoContentElement) {
-      heoContentElement.classList.add("show-result");
-    }
+
+    setTimeout(() => {
+      window.scrollTo({
+        behavior: "smooth",
+        top: scrollPosition,
+      });
+    }, 10);
   };
 
   const handleInputKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
@@ -121,9 +136,6 @@ function App() {
   const handleClear = () => {
     setInputValue("");
     setActiveQuery("");
-    if (heoContentElement) {
-      heoContentElement.classList.remove("show-result");
-    }
   };
 
   const isSearchDisabled = inputValue.trim().length === 0;
@@ -152,86 +164,86 @@ function App() {
         </div>
       </header>
 
-      <section className="hero" aria-labelledby="hero-title">
-        <div className="hero-inner">
-          <div id="hero-content" className="hero-content">
-            <div className="hero-title-container">
-              <h1 id="hero-title" className="hero-title">
-                {t(UI_TEXT.title)}
-              </h1>
-              <h2 className="hero-subtitle">{t(UI_TEXT.subtitle)}</h2>
-            </div>
+      <section
+        id="main-wrapper"
+        className="main-wrapper"
+        aria-labelledby="hero-title"
+      >
+        <div className="hero-title-wrapper">
+          <h1 id="hero-title" className="hero-title">
+            {t(UI_TEXT.title)}
+          </h1>
+          <h2 className="hero-subtitle">{t(UI_TEXT.subtitle)}</h2>
+        </div>
 
-            <div
-              className="search-block"
-              aria-label={t(UI_TEXT.destinationLabel)}
-            >
-              <label className="search-label" htmlFor="station-search">
-                {t(UI_TEXT.destinationLabel)}
-              </label>
-              <div className="search-input-wrapper">
-                <input
-                  id="station-search"
-                  className="search-input"
-                  autoComplete="off"
-                  placeholder={t(UI_TEXT.searchPlaceholder)}
-                  value={inputValue}
-                  onChange={(event) => setInputValue(event.target.value)}
-                  onKeyDown={handleInputKeyDown}
-                />
-                <div className="search-input-button-wrapper">
-                  {inputValue && (
-                    <>
-                      <button
-                        type="button"
-                        className="clear-button"
-                        onClick={handleClear}
-                        aria-label={t(UI_TEXT.clearSearch)}
-                      >
-                        ✕
-                      </button>
-                      <button
-                        type="button"
-                        className="clear-button search-button"
-                        onClick={handleSearch}
-                        disabled={isSearchDisabled}
-                      >
-                        {t(UI_TEXT.search)}
-                      </button>
-                    </>
-                  )}
-                </div>
+        <div className="search-block-wrapper">
+          <div
+            className="search-block"
+            aria-label={t(UI_TEXT.destinationLabel)}
+          >
+            <label className="search-label" htmlFor="station-search">
+              {t(UI_TEXT.destinationLabel)}
+            </label>
+            <div id="search-input-wrapper" className="search-input-wrapper">
+              <input
+                id="station-search"
+                className="search-input"
+                autoComplete="off"
+                placeholder={t(UI_TEXT.searchPlaceholder)}
+                value={inputValue}
+                onChange={(event) => setInputValue(event.target.value)}
+                onKeyDown={handleInputKeyDown}
+              />
+              <div className="search-input-button-wrapper">
+                {inputValue && (
+                  <>
+                    <button
+                      type="button"
+                      className="clear-button"
+                      onClick={handleClear}
+                      aria-label={t(UI_TEXT.clearSearch)}
+                    >
+                      ✕
+                    </button>
+                    <button
+                      type="button"
+                      className="clear-button search-button"
+                      onClick={handleSearch}
+                      disabled={isSearchDisabled}
+                    >
+                      {t(UI_TEXT.search)}
+                    </button>
+                  </>
+                )}
               </div>
             </div>
           </div>
         </div>
+
+        {showResults && (
+          <main className="results-section" aria-live="polite">
+            {hasMatches ? (
+              <div className="results-list">
+                {matches.map((match) => (
+                  <StationCard
+                    key={`${match.route.id}-${
+                      match.station.code ?? match.station.name.en
+                    }`}
+                    match={match}
+                  />
+                ))}
+              </div>
+            ) : (
+              <div className="empty-state" role="status">
+                <h2>{t(UI_TEXT.noResultsTitle)}</h2>
+                <p>{t(UI_TEXT.noResultsPrefix)}</p>
+              </div>
+            )}
+          </main>
+        )}
       </section>
 
-      {showResults && (
-        <main className="results-section" aria-live="polite">
-          {hasMatches ? (
-            <div className="results-list">
-              {matches.map((match) => (
-                <StationCard
-                  key={`${match.route.id}-${
-                    match.station.code ?? match.station.name.en
-                  }`}
-                  match={match}
-                />
-              ))}
-            </div>
-          ) : (
-            <div className="empty-state" role="status">
-              <h2>{t(UI_TEXT.noResultsTitle)}</h2>
-              <p>
-                {t(UI_TEXT.noResultsPrefix)} <strong>N8</strong>{" "}
-                {t(UI_TEXT.noResultsMid)} <strong>E4</strong>{" "}
-                {t(UI_TEXT.noResultsSuffix)}
-              </p>
-            </div>
-          )}
-        </main>
-      )}
+      <footer className="app-footer">By apiwit | Github</footer>
     </div>
   );
 }
