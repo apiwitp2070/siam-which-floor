@@ -9,9 +9,14 @@ export const UI_TEXT = {
   search: { en: "Search", th: "ค้นหา" },
   clearSearch: { en: "Clear search", th: "ล้างการค้นหา" },
   suggestionsLabel: { en: "Popular from Siam", th: "ยอดนิยมจากสยาม" },
+  lookoutFor: {
+    en: "Look out For these informations",
+    th: "มองหาป้ายข้อมูลต่อไปนี้",
+  },
   levelLabel: { en: "Level", th: "ชั้น" },
   nextStopLabel: { en: "Next stop", th: "สถานีถัดไป" },
   terminalLabel: { en: "Terminal", th: "ปลายทาง" },
+  remarkLabel: { en: "Remark", th: "หมายเหตุ" },
   noResultsTitle: { en: "No station found", th: "ไม่พบสถานี" },
   noResultsPrefix: {
     en: "Double-check the spelling or try searching by station code such as N8 for Mo Chit.",

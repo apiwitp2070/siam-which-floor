@@ -490,5 +490,236 @@
         "tokens": ["MBK", "สนามกีฬาแห่งชาติ"]
       }
     ]
-  }
+  },
+  "pink": [
+    {
+      "name": { "en": "Rajabhat Phranakhon", "th": "ราชภัฏพระนคร" },
+      "code": "PK15",
+      "tokens": ["ราชภัฏพระนคร"]
+    },
+    {
+      "name": { "en": "Lak Si", "th": "หลักสี่" },
+      "code": "PK14",
+      "tokens": ["หลักสี่"]
+    },
+    {
+      "name": { "en": "National Telecom", "th": "โทรคมนาคมแห่งชาติ" },
+      "code": "PK13",
+      "tokens": ["โทรคมนาคมแห่งชาติ", "NT"]
+    },
+    {
+      "name": { "en": "Government Complex", "th": "ศูนย์ราชการ" },
+      "code": "PK12",
+      "tokens": ["ศูนย์ราชการ", "แจ้งวัฒนะ"]
+    },
+    {
+      "name": { "en": "Chaeng Watthana 14", "th": "แจ้งวัฒนะ 14" },
+      "code": "PK11",
+      "tokens": ["แจ้งวัฒนะ 14"]
+    },
+    {
+      "name": { "en": "Muang Thong Thani", "th": "เมืองทองธานี" },
+      "code": "PK10",
+      "tokens": ["เมืองทองธานี", "เมืองทอง", "Impact"]
+    },
+    {
+      "name": { "en": "Khae Rai", "th": "แคราย" },
+      "code": "PK03",
+      "tokens": ["แคราย"]
+    },
+    {
+      "name": {
+        "en": "Nonthaburi Civic Center",
+        "th": "ศูนย์ราชการนนทบุรี"
+      },
+      "code": "PK01",
+      "tokens": ["ศูนย์ราชการนนทบุรี", "Civic Center"]
+    },
+    {
+      "name": { "en": "Ram Inthra 3", "th": "รามอินทรา 3" },
+      "code": "PK17",
+      "tokens": ["รามอินทรา 3", "รามอินทรา3"]
+    },
+    {
+      "name": { "en": "Lat Pla Khao", "th": "ลาดปลาเค้า" },
+      "code": "PK18",
+      "tokens": ["ลาดปลาเค้า"]
+    },
+    {
+      "name": { "en": "Ram Inthra Km.4", "th": "รามอินทรา กม.4" },
+      "code": "PK19",
+      "tokens": ["รามอินทรา กม.4", "กม.4"]
+    },
+    {
+      "name": { "en": "Maiyalap", "th": "มัยลาภ" },
+      "code": "PK20",
+      "tokens": ["มัยลาภ"]
+    },
+    {
+      "name": { "en": "Khu Bon", "th": "คูบอน" },
+      "code": "PK23",
+      "tokens": ["คูบอน"]
+    },
+    {
+      "name": {
+        "en": "Outer Ring–Ram Inthra",
+        "th": "วงแหวนตะวันออก–รามอินทรา"
+      },
+      "code": "PK25",
+      "tokens": ["วงแหวนตะวันออก"]
+    },
+    {
+      "name": { "en": "Min Buri Market", "th": "ตลาดมีนบุรี" },
+      "code": "PK29",
+      "tokens": ["ตลาดมีนบุรี"]
+    },
+    {
+      "name": { "en": "Min Buri", "th": "มีนบุรี" },
+      "code": "PK30",
+      "tokens": ["มีนบุรี"]
+    }
+  ],
+  "yellow": {
+    "northbound": [
+      {
+        "name": { "en": "Lat Phrao", "th": "ลาดพร้าว" },
+        "code": "YL01",
+        "tokens": ["ลาดพร้าว"]
+      },
+      {
+        "name": { "en": "Phawana", "th": "ภาวนา" },
+        "code": "YL02",
+        "tokens": ["ภาวนา"]
+      },
+      {
+        "name": { "en": "Chok Chai 4", "th": "โชคชัย 4" },
+        "code": "YL03",
+        "tokens": ["โชคชัย 4", "โชคชัย4"]
+      },
+      {
+        "name": { "en": "Lat Phrao 71", "th": "ลาดพร้าว 71" },
+        "code": "YL04",
+        "tokens": ["ลาดพร้าว 71"]
+      }
+    ],
+    "middlebound": [
+      {
+        "name": { "en": "Lat Phrao 83", "th": "ลาดพร้าว 83" },
+        "code": "YL05",
+        "tokens": ["ลาดพร้าว 83"]
+      },
+      {
+        "name": { "en": "Mahat Thai", "th": "มหาดไทย" },
+        "code": "YL06",
+        "tokens": ["มหาดไทย"]
+      },
+      {
+        "name": { "en": "Lat Phrao 101", "th": "ลาดพร้าว 101" },
+        "code": "YL07",
+        "tokens": ["ลาดพร้าว 101"]
+      },
+      {
+        "name": { "en": "Bang Kapi", "th": "บางกะปิ" },
+        "code": "YL08",
+        "tokens": ["บางกะปิ"]
+      },
+      {
+        "name": { "en": "Yaek Lam Sali", "th": "แยกลำสาลี" },
+        "code": "YL09",
+        "tokens": ["แยกลำสาลี", "ลำสาลี"]
+      },
+      {
+        "name": { "en": "Si Kritha", "th": "ศรีกรีฑา" },
+        "code": "YL10",
+        "tokens": ["ศรีกรีฑา"]
+      },
+      {
+        "name": { "en": "Hua Mak", "th": "หัวหมาก" },
+        "code": "YL11",
+        "tokens": ["หัวหมาก"]
+      },
+      {
+        "name": { "en": "Kalantan", "th": "กลันตัน" },
+        "code": "YL12",
+        "tokens": ["กลันตัน"]
+      },
+      {
+        "name": { "en": "Si Nut", "th": "ศรีนุช" },
+        "code": "YL13",
+        "tokens": ["ศรีนุช"]
+      },
+      {
+        "name": { "en": "Srinagarindra 38", "th": "ศรีนครินทร์ 38" },
+        "code": "YL14",
+        "tokens": ["ศรีนครินทร์ 38"]
+      },
+      {
+        "name": { "en": "Suan Luang Rama IX", "th": "สวนหลวง ร.9" },
+        "code": "YL15",
+        "tokens": ["สวนหลวง ร.9"]
+      },
+      {
+        "name": { "en": "Si Udom", "th": "ศรีอุดม" },
+        "code": "YL16",
+        "tokens": ["ศรีอุดม"]
+      },
+      {
+        "name": { "en": "Si Iam", "th": "ศรีเอี่ยม" },
+        "code": "YL17",
+        "tokens": ["ศรีเอี่ยม"]
+      },
+      {
+        "name": { "en": "Si La Salle", "th": "ศรีลาซาล" },
+        "code": "YL18",
+        "tokens": ["ศรีลาซาล"]
+      },
+      {
+        "name": { "en": "Si Bearing", "th": "ศรีแบริ่ง" },
+        "code": "YL19",
+        "tokens": ["ศรีแบริ่ง", "แบริ่ง"]
+      },
+      {
+        "name": { "en": "Si Dan", "th": "ศรีด่าน" },
+        "code": "YL20",
+        "tokens": ["ศรีด่าน"]
+      }
+    ],
+    "eastbound": [
+      {
+        "name": { "en": "Si Thepha", "th": "ศรีเทพา" },
+        "code": "YL21",
+        "tokens": ["ศรีเทพา"]
+      },
+      {
+        "name": { "en": "Thipphawan", "th": "ทิพวัล" },
+        "code": "YL22",
+        "tokens": ["ทิพวัล"]
+      },
+      {
+        "name": { "en": "Samrong", "th": "สำโรง" },
+        "code": "YL23",
+        "tokens": ["สำโรง"]
+      }
+    ]
+  },
+  "gold": [
+    {
+      "name": { "en": "Krung Thon Buri", "th": "กรุงธนบุรี" },
+      "code": "GL1",
+      "tokens": ["กรุงธนบุรี", "S7 เชื่อมสายสีทอง"]
+    },
+    {
+      "name": {
+        "en": "Charoen Nakhon",
+        "th": "เจริญนคร"
+      },
+      "code": "GL2",
+      "tokens": ["เจริญนคร", "ไอคอนสยาม", "ICONSIAM"]
+    },
+    {
+      "name": { "en": "Khlong San", "th": "คลองสาน" },
+      "code": "GL3",
+      "tokens": ["คลองสาน"]
+    }
+  ]
 }

@@ -1,5 +1,5 @@
 import { createContext, useContext, useMemo, useState } from "react";
-import type { Locale, LocalizedText } from "./data/siamRoutes";
+import type { Locale, LocalizedText } from "./types";
 
 interface I18nContextValue {
   locale: Locale;

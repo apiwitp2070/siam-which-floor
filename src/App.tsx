@@ -1,13 +1,9 @@
 import { useEffect, useMemo, useState } from "react";
-import {
-  ALL_LOCALES,
-  buildStationLookup,
-  type StationLookup,
-  type Locale,
-} from "./data/siamRoutes";
+import { ALL_LOCALES, type StationLookup, type Locale } from "./types";
 import { useI18n } from "./i18n";
 import "./App.css";
 import { UI_TEXT } from "./data/language";
+import { buildStationLookup } from "./data/siamRoutes";
 
 const LOCALE_LABEL: Record<Locale, string> = {
   en: "EN",
@@ -21,7 +17,6 @@ const centerToken = ["siam", "สยาม"];
 function App() {
   const [inputValue, setInputValue] = useState("");
   const [activeQuery, setActiveQuery] = useState("");
-  const [scrollPosition, setScrollPosition] = useState(0);
 
   const { locale, toggleLocale, t } = useI18n();
 
@@ -30,18 +25,9 @@ function App() {
   const normalizedActiveQuery = activeQuery.trim().toLowerCase();
 
   useEffect(() => {
-    const searchBoxElement = document.getElementById("search-input-wrapper");
-
-    if (!searchBoxElement) return;
-
-    const rect = searchBoxElement.getBoundingClientRect();
-    const scrollY = window.scrollY || window.pageYOffset;
-
-    const scrollTo = rect.bottom + scrollY + window.innerHeight * 0.2;
-
-    setScrollPosition(scrollTo);
-
-    document.getElementById("station-search")?.focus();
+    if (!isMobileUserAgent()) {
+      document.getElementById("station-search")?.focus();
+    }
   }, []);
 
   const matches = useMemo(() => {
@@ -101,12 +87,21 @@ function App() {
     const trimmed = inputValue.trim();
     setActiveQuery(trimmed);
 
-    document.getElementById("station-search")?.blur();
+    if (isMobileUserAgent()) {
+      document.getElementById("station-search")?.blur();
+    }
 
     setTimeout(() => {
+      const searchBoxElement = document.getElementById("search-input-wrapper");
+
+      if (!searchBoxElement) return;
+
+      const scrollTo =
+        window.innerHeight * (window.innerWidth <= 1024 ? 0.85 : 0.8);
+
       window.scrollTo({
         behavior: "smooth",
-        top: scrollPosition,
+        top: scrollTo,
       });
     }, 10);
   };
@@ -261,35 +256,52 @@ function StationCard({ match }: StationCardProps) {
         </span>
         <h2>{t(station.name)}</h2>
         {station.code && <span className="station-code">{station.code}</span>}
-        <p>{t(route.directionLabel)}</p>
       </div>
 
-      <dl className="station-details">
-        <div>
-          <dt>{t(UI_TEXT.levelLabel)}</dt>
-          <dd>{t(line.floorLabel)}</dd>
-        </div>
-        <div>
-          <dt>{t(UI_TEXT.nextStopLabel)}</dt>
-          <dd>
-            {t(route.nextStation.name)}{" "}
-            {route.nextStation.code && (
-              <span className="meta-code">{route.nextStation.code}</span>
-            )}
-          </dd>
-        </div>
-        <div>
-          <dt>{t(UI_TEXT.terminalLabel)}</dt>
-          <dd>
-            {t(route.terminalStation.name)}{" "}
-            {route.terminalStation.code && (
-              <span className="meta-code">{route.terminalStation.code}</span>
-            )}
-          </dd>
-        </div>
-      </dl>
+      <div>
+        <p>{t(UI_TEXT.lookoutFor)}</p>
+        <dl className="station-details">
+          <div>
+            <dt>{t(UI_TEXT.levelLabel)}</dt>
+            <dd>{t(route.floorLabel)}</dd>
+          </div>
+          <div>
+            <dt>{t(UI_TEXT.nextStopLabel)}</dt>
+            <dd>
+              {t(route.nextStation.name)}{" "}
+              {route.nextStation.code && (
+                <span className="meta-code">{route.nextStation.code}</span>
+              )}
+            </dd>
+          </div>
+          <div>
+            <dt>{t(UI_TEXT.terminalLabel)}</dt>
+            <dd>
+              {t(route.terminalStation.name)}{" "}
+              {route.terminalStation.code && (
+                <span className="meta-code">{route.terminalStation.code}</span>
+              )}
+            </dd>
+          </div>
+        </dl>
+        {route.remark && (
+          <div className="station-details">
+            <div>
+              <dt>{t(UI_TEXT.remarkLabel)}</dt>
+              <span>{t(route.remark)}</span>
+            </div>
+          </div>
+        )}
+      </div>
     </article>
   );
 }
 
 export default App;
+
+function isMobileUserAgent() {
+  const userAgent = navigator.userAgent;
+  return /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(
+    userAgent
+  );
+}
